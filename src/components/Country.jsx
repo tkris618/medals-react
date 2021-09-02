@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 
 class Country extends Component {
-  state = {  }
+  state = {
+    name: 'United States',
+    gold: 0,
+  }
   render() { 
     return (
       <div className="country">
         <div className="name">
-          United States
+          { this.state.name }
         </div>
         <div className="medals">
-          gold medals: 0
+          gold medals: { this.state.gold }
           <button>+</button>
         </div>
       </div>
