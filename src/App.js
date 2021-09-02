@@ -1,7 +1,7 @@
   
 // Repository:  medals-b-react
 // Author:      Jeff Grissom
-// Version:     1.xx
+// Version:     2.xx
 import React, { Component } from 'react';
 import Country from './components/Country';
 import './App.css';
