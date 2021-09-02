@@ -16,6 +16,7 @@ class Country extends Component {
           gold medals: { this.state.gold }
           <button onClick={ this.handleIncrement }>+</button>
         </div>
+        <hr />
       </div>
     );
   }
