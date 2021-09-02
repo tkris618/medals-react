@@ -5,6 +5,7 @@ class Country extends Component {
     name: 'United States',
     gold: 0,
   }
+  handleIncrement = () => this.setState({ gold: this.state.gold + 1 });
   render() { 
     return (
       <div className="country">
@@ -13,7 +14,7 @@ class Country extends Component {
         </div>
         <div className="medals">
           gold medals: { this.state.gold }
-          <button>+</button>
+          <button onClick={ this.handleIncrement }>+</button>
         </div>
       </div>
     );
