@@ -31,11 +31,19 @@ class App extends Component {
     countries[idx][medalName] -= 1;
     this.setState({ countries: countries });
   }
+  getAllMedalsTotal() {
+    let sum = 0;
+    this.state.medals.forEach(medal => { sum += this.state.countries.reduce((a, b) => a + b[medal.name], 0); });
+    return sum;
+  }
   render() { 
     return (
       <React.Fragment>
         <div className='appHeading'>
           Olympic Medals
+          <span className='badge'>
+            { this.getAllMedalsTotal() }
+          </span>
         </div>
         <div className='countries'>
             { this.state.countries.map(country => 
