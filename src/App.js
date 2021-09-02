@@ -34,14 +34,19 @@ class App extends Component {
   render() { 
     return (
       <React.Fragment>
-        { this.state.countries.map(country => 
-          <Country 
-            key={ country.id } 
-            country={ country } 
-            medals={ this.state.medals }
-            onIncrement={ this.handleIncrement } 
-            onDecrement={ this.handleDecrement } />
-        )}
+        <div className='appHeading'>
+          Olympic Medals
+        </div>
+        <div className='countries'>
+            { this.state.countries.map(country => 
+              <Country 
+                key={ country.id } 
+                country={ country } 
+                medals={ this.state.medals }
+                onIncrement={ this.handleIncrement } 
+                onDecrement={ this.handleDecrement } />
+            )}
+        </div>
       </React.Fragment>
     );
   }
