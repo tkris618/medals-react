@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 class Country extends Component {
   state = {
-    name: 'United States',
-    gold: 0,
+    name: this.props.country.name,
+    gold: this.props.country.gold,
   }
   handleIncrement = () => this.setState({ gold: this.state.gold + 1 });
   render() { 
