@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 
 class Country extends Component {
   render() { 
+    const { country, onIncrement, onDecrement } = this.props;
     return (
       <div className="country">
         <div className="name">
-          { this.props.country.name }
+          { country.name }
         </div>
         <div className="medals">
-          gold medals: { this.props.country.gold }
-          <button onClick={ () => this.props.onIncrement(this.props.country.id) }>
+          gold medals: { country.gold }
+          <button onClick={ () => onIncrement(country.id) }>
             +
           </button>
-          <button disabled={ this.props.country.gold === 0 } onClick={ () => this.props.onDecrement(this.props.country.id) }>
+          <button disabled={ country.gold === 0 } onClick={ () => onDecrement(country.id) }>
             -
           </button>
         </div>
