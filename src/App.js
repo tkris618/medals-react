@@ -12,18 +12,21 @@ class App extends Component {
       { id: 1, name: 'United States', gold: 2 },
       { id: 2, name: 'China', gold: 3 },
       { id: 3, name: 'Germany', gold: 0 },
+    ],
+    medals: [
+      { id: 1, name: 'gold' },
     ]
   }
-  handleIncrement = (countryId) => {
+  handleIncrement = (countryId, medalName) => {
     const countries = [ ...this.state.countries ];
     const idx = countries.findIndex(c => c.id === countryId);
-    countries[idx].gold += 1;
+    countries[idx][medalName] += 1;
     this.setState({ countries: countries });
   }
-  handleDecrement = (countryId) => {
+  handleDecrement = (countryId, medalName) => {
     const countries = [ ...this.state.countries ];
     const idx = countries.findIndex(c => c.id === countryId);
-    countries[idx].gold -= 1;
+    countries[idx][medalName] -= 1;
     this.setState({ countries: countries });
   }
   render() { 
@@ -33,6 +36,7 @@ class App extends Component {
           <Country 
             key={ country.id } 
             country={ country } 
+            medals={ this.state.medals }
             onIncrement={ this.handleIncrement } 
             onDecrement={ this.handleDecrement } />
         )}
