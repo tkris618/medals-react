@@ -14,11 +14,27 @@ class App extends Component {
       { id: 3, name: 'Germany', gold: 0 },
     ]
   }
+  handleIncrement = (countryId) => {
+    const countries = [ ...this.state.countries ];
+    const idx = countries.findIndex(c => c.id === countryId);
+    countries[idx].gold += 1;
+    this.setState({ countries: countries });
+  }
+  handleDecrement = (countryId) => {
+    const countries = [ ...this.state.countries ];
+    const idx = countries.findIndex(c => c.id === countryId);
+    countries[idx].gold -= 1;
+    this.setState({ countries: countries });
+  }
   render() { 
     return (
       <React.Fragment>
         { this.state.countries.map(country => 
-          <Country key={ country.id } country={ country } />
+          <Country 
+            key={ country.id } 
+            country={ country } 
+            onIncrement={ this.handleIncrement } 
+            onDecrement={ this.handleDecrement } />
         )}
       </React.Fragment>
     );
