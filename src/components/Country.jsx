@@ -6,6 +6,7 @@ class Country extends Component {
     gold: this.props.country.gold,
   }
   handleIncrement = () => this.setState({ gold: this.state.gold + 1 });
+  handleDecrement = () => this.setState({ gold: this.state.gold - 1 });
   render() { 
     return (
       <div className="country">
@@ -15,6 +16,7 @@ class Country extends Component {
         <div className="medals">
           gold medals: { this.state.gold }
           <button onClick={ this.handleIncrement }>+</button>
+          <button disabled={ this.state.gold === 0 } onClick={ this.handleDecrement }>-</button>
         </div>
         <hr />
       </div>
