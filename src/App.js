@@ -26,6 +26,9 @@ class App extends Component {
     const mutableCountries = [...countries].concat({ id: id, name: name, gold: 0, silver: 0, bronze: 0 });
     this.setState({ countries: mutableCountries });
   }
+  handleDelete = (countryId) => {
+    console.log(countryId);
+  }
   handleIncrement = (countryId, medalName) => {
     const countries = [ ...this.state.countries ];
     const idx = countries.findIndex(c => c.id === countryId);
@@ -58,6 +61,7 @@ class App extends Component {
                 key={ country.id } 
                 country={ country } 
                 medals={ this.state.medals }
+                onDelete={ this.handleDelete }
                 onIncrement={ this.handleIncrement } 
                 onDecrement={ this.handleDecrement } />
             )}
