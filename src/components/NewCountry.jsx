@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 
 class NewCountry extends Component {
   state = {  }
-  handleClick = (e) => {
-    e.preventDefault();
-    console.log('add country');
+  handleClick = () => {
+    const name = prompt('Enter country name');
+    if (name && name.trim().length > 0) {
+      this.props.onAdd(name);
+    }
   }
   render() { 
     return (
