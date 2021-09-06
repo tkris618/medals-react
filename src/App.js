@@ -20,7 +20,11 @@ class App extends Component {
     ]
   }
   handleAdd = (name) => {
-    console.log(name);
+    const { countries } = this.state;
+    const id = countries.length === 0 ? 1 : Math.max(...countries.map(country => country.id)) + 1;
+    // let mutableCountries = [...countries];
+    const mutableCountries = [...countries].concat({ id: id, name: name, gold: 0, silver: 0, bronze: 0 });
+    this.setState({ countries: mutableCountries });
   }
   handleIncrement = (countryId, medalName) => {
     const countries = [ ...this.state.countries ];

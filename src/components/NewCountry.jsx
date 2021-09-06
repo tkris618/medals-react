@@ -10,7 +10,7 @@ class NewCountry extends Component {
   }
   render() { 
     return (
-      <div style={{ textAlign: 'center' }}>
+      <div className='newCountryButton'>
         <button onClick={ this.handleClick }>New Country</button>
       </div>
     );

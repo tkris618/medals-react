@@ -53,3 +53,8 @@
   margin-left: 10px;
   width: 25px;
 }
+
+.newCountryButton {
+  text-align: center;
+  margin-bottom: 20px; 
+}
